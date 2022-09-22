@@ -1,0 +1,33 @@
+import cpuinfo
+import psutil
+
+#To Check Processor Mounted
+print("The CPU Mounted is::") 
+print(cpuinfo.get_cpu_info()["brand_raw"])
+
+
+#To Check Number Of Logical Processors In Cpu
+print("This CPU have " + str(psutil.cpu_count()) + " Processors")
+
+#To Check CPU Frequency
+print("CPU Frequency")
+print(psutil.cpu_freq())
+
+#To Check Status Of RAM
+print("Current Status Of RAM::")
+print(psutil.virtual_memory())
+
+
+#To Check Total partions Of Hard Drive
+print("The Drives That are Present In Sytem")
+print(psutil.disk_partitions())
+
+#To Check The Storage Present On C Drive
+print("The Current Status Of The C. Drive")
+print(psutil.disk_usage('\c'))
+
+
+#To Check Cpu Load
+
+while True:
+  print("The Current Cpu Load  is :: " + str(psutil.cpu_percent(60)))
